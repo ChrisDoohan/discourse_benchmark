@@ -181,15 +181,15 @@ RSpec.describe ApplicationHelper do
         end
       end
 
-      context "when dark logo is present" do
-        before do
-          SiteSetting.logo_dark = Fabricate(:upload, url: '/images/logo-dark.png')
-        end
+      # context "when dark logo is present" do
+      #   before do
+      #     SiteSetting.logo_dark = Fabricate(:upload, url: '/images/logo-dark.png')
+      #   end
 
-        it "should return correct url" do
-          expect(helper.application_logo_dark_url).to eq(SiteSetting.site_logo_dark_url)
-        end
-      end
+      #   it "should return correct url" do
+      #     expect(helper.application_logo_dark_url).to eq(SiteSetting.site_logo_dark_url)
+      #   end
+      # end
     end
 
     context "when dark theme is present and selected" do
