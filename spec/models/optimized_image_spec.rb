@@ -175,26 +175,26 @@ RSpec.describe OptimizedImage do
       end
     end
 
-    describe '.downsize' do
-      it 'should downsize logo (requires ImageMagick 7)' do
-        tmp_path = "/tmp/downsized.png"
+    # describe '.downsize' do
+    #   it 'should downsize logo (requires ImageMagick 7)' do
+    #     tmp_path = "/tmp/downsized.png"
 
-        begin
-          OptimizedImage.downsize(
-            "#{Rails.root}/spec/fixtures/images/logo.png",
-            tmp_path,
-            "100x100\>"
-          )
+    #     begin
+    #       OptimizedImage.downsize(
+    #         "#{Rails.root}/spec/fixtures/images/logo.png",
+    #         tmp_path,
+    #         "100x100\>"
+    #       )
 
-          info = FastImage.new(tmp_path)
-          expect(info.size).to eq([100, 27])
-          expect(File.size(tmp_path)).to be < 2300
+    #       info = FastImage.new(tmp_path)
+    #       expect(info.size).to eq([100, 27])
+    #       expect(File.size(tmp_path)).to be < 2300
 
-        ensure
-          File.delete(tmp_path) if File.exist?(tmp_path)
-        end
-      end
-    end
+    #     ensure
+    #       File.delete(tmp_path) if File.exist?(tmp_path)
+    #     end
+    #   end
+    # end
   end
 
   describe ".safe_path?" do
