@@ -11,7 +11,7 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 RAILS_ENV=test bundle exec rake db:create db:migrate
 
-source bench/bensh.sh
+source bench/bench.sh
 source bench/print_versions.sh
 ```
 
