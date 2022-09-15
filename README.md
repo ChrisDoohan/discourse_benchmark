@@ -1,3 +1,20 @@
+# Using This Repo to Benchmark The M1
+```Bash
+git clone git@github.com:ChrisDoohan/discourse_benchmark.git
+cd discourse_benchmark
+
+source bench/setup_tools.sh
+ZDOTDIR=bench/zsh_override zsh
+
+bundle install
+bundle exec rake db:create
+bundle exec rake db:migrate
+RAILS_ENV=test bundle exec rake db:create db:migrate
+
+source bench/bensh.sh
+source bench/print_versions.sh
+```
+
 <a href="https://www.discourse.org/">
   <img src="images/discourse-readme-logo.png" width="300px">
 </a>

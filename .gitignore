@@ -62,3 +62,7 @@ openapi/*
 
 # Cached License Data Files
 /.licenses
+
+.zsh_history
+.zcompdump
+
