@@ -2,18 +2,18 @@
 ```Bash
 git clone git@github.com:ChrisDoohan/discourse_benchmark.git
 cd discourse_benchmark
-
 source bench/setup_tools.sh
-ZDOTDIR=bench/zsh_override zsh
-
 bundle install
 bundle exec rake db:create
 bundle exec rake db:migrate
 RAILS_ENV=test bundle exec rake db:create db:migrate
 
+env -i ZDOTDIR=./bench/zsh_override zsh
 source bench/bench.sh
 source bench/print_versions.sh
 ```
+
+# Discourse
 
 <a href="https://www.discourse.org/">
   <img src="images/discourse-readme-logo.png" width="300px">
